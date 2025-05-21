@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api-gateway
-          image: tu-imagen/api-gateway:latest
+          image: tu-imagen/api-gateway:8aa2905
           ports:
             - containerPort: 8080
           env:
