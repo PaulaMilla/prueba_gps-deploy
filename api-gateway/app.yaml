@@ -9,11 +9,11 @@ spec:
   source:
     repoURL: 'https://github.com/PaulaMilla/prueba_gps-deploy.git'
     targetRevision: HEAD
-    path: usuarios-service
+    path: api-gateway
 
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: usuarios
+    namespace: api-gateway
 
   syncPolicy:
     automated:
