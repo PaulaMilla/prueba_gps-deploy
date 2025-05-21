@@ -14,6 +14,13 @@ spec:
     spec:
       containers:
         - name: api-gateway
-          image: paulaveloso/api-gateway:7e013c2
+          image: tu-imagen/api-gateway:latest
           ports:
             - containerPort: 8080
+          env:
+            - name: USUARIOS_SERVICE_URL
+              value: "http://usuarios-service.usuarios:8080"
+            - name: VENTAS_SERVICE_URL
+              value: "http://ventas-service.ventas:8080"
+            - name: INVENTARIO_SERVICE_URL
+              value: "http://inventario-service.inventario:8080"
