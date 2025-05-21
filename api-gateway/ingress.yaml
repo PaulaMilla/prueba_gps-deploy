@@ -4,16 +4,23 @@ metadata:
   name: api-gateway-ingress
   namespace: api-gateway
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
     - host: api-gateway.local
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - path: /api/usuarios(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
-                name: api-gateway-service
+                name: api-gateway
                 port:
-                  number: 8080
+                  number: 80
+          - path: /api/ventas(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: api-gateway
+                port:
+                  number: 80
