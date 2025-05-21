@@ -1,24 +1,11 @@
-spring:
-  cloud:
-    gateway:
-      routes:
-        - id: usuarios-service
-          uri: http://usuarios-service:80
-          predicates:
-            - Path=/api/usuarios/**
-          filters:
-            - RewritePath=/api/usuarios/(?<segment>.*), /${segment}
-
-        - id: inventarios-service
-          uri: http://inventarios-service:80
-          predicates:
-            - Path=/api/inventarios/**
-          filters:
-            - RewritePath=/api/inventarios/(?<segment>.*), /${segment}
-
-        - id: ventas-service
-          uri: http://ventas-service:80
-          predicates:
-            - Path=/api/ventas/**
-          filters:
-            - RewritePath=/api/ventas/(?<segment>.*), /${segment}
+apiVersion: v1
+kind: Service
+metadata:
+  name: usuarios-service
+spec:
+  selector:
+    app: usuarios-service
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: ClusterIP
