@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ventas-service
-          image: paulaveloso/ventas-service:7e013c2
+          image: paulaveloso/ventas-service:ef774d2
           ports:
             - containerPort: 8080
           env:
