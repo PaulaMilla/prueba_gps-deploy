@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend
+spec:
+  rules:
+    - host: frontend.local  # URL estática para el API Gateway
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend  # Nombre del servicio
+                port:
+                  number: 80       # Puerto expuesto por el servicio
