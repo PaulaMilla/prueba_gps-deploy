@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-ingress
+spec:
+  rules:
+    - host: api-gateway.local  # URL estática para el API Gateway
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: api-gateway  # Nombre del servicio
+                port:
+                  number: 80       # Puerto expuesto por el servicio
