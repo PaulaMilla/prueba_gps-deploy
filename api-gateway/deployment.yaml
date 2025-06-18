@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: api-gateway
-          image: paulaveloso/api-gateway:be0e69a
+          image: paulaveloso/api-gateway:e2b5f7f
           ports:
             - containerPort: 8080
           env:
