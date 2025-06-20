@@ -1,18 +1,25 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: api-gateway
+  name: unified-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
+  ingressClassName: nginx
   rules:
-    - host: api-gateway.local  # URL estática para el API Gateway
-      http:
+    - http:
         paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: api-gateway
+                port:
+                  number: 80
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: api-gateway  # Nombre del servicio
+                name: frontend
                 port:
-                  number: 80       # Puerto expuesto por el servicio
+                  number: 80

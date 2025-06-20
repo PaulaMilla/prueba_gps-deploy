@@ -5,14 +5,24 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
+  ingressClassName: nginx
   rules:
-    - host: frontend.local  # URL estática para el frontend
+    - host: frontend.local
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: frontend  # Nombre del servicio
+                name: frontend
                 port:
-                  number: 80       # Puerto expuesto por el servicio
+                  number: 80
+    - http:  # Esta regla captura el tráfico por IP
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
