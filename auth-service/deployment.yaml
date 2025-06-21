@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth-service
-          image: paulaveloso/auth-service:8ac849d
+          image: paulaveloso/auth-service:e3300a7
           ports:
             - containerPort: 8080
           env:
