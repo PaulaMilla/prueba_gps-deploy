@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pacientes-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pacientes-service
+  template:
+    metadata:
+      labels:
+        app: pacientes-service
+    spec:
+      containers:
+        - name: pacientes-service
+          image: paulaveloso/pacientes-service:${GITHUB_SHA::7}
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql-db.mysql.svc.cluster.local:3306/sga_db
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: username
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: password

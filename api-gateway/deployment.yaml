@@ -28,6 +28,8 @@ spec:
               value: "http://ventas-service.ventas:8080"
             - name: INVENTARIOS_SERVICE_URL
               value: "http://inventarios-service.inventarios:8080"
+            - name: PACIENTES_SERVICE_URL
+              value: "http://pacientes-service.pacientes:8080"
             - name: AUTH_SERVICE_URL
               value: "http://auth-service.auth:8080"
       
