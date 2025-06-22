@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pacientes-service
-          image: paulaveloso/pacientes-service:${GITHUB_SHA::7}
+          image: paulaveloso/pacientes-service:latest
           ports:
             - containerPort: 8080
           env:
