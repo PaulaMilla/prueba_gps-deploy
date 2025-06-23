@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pacientes-service
-          image: paulaveloso/pacientes-service:e19ad79
+          image: paulaveloso/pacientes-service:527353b
           ports:
             - containerPort: 8080
           env:
