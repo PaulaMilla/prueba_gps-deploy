@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: usuarios-service
-          image: paulaveloso/usuarios-service:71ee065
+          image: paulaveloso/usuarios-service:c91e54a
           ports:
             - containerPort: 8080
           env:
