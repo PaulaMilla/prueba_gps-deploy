@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: compras-service
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: 'https://github.com/PaulaMilla/prueba_gps-deploy.git'
+    targetRevision: HEAD
+    path: compras-service
+
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: compras
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

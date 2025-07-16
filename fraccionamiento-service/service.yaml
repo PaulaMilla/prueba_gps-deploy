@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fraccionamiento-service
+spec:
+  selector:
+    app: fraccionamiento-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

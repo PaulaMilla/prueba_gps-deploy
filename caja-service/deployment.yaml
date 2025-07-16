@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: caja-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: caja-service
+  template:
+    metadata:
+      labels:
+        app: caja-service
+    spec:
+      containers:
+        - name: caja-service
+          image: paulaveloso/caja-service:1be4c2a
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql-db.mysql.svc.cluster.local:3306/sga_db
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: username
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: password

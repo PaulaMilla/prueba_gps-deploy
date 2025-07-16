@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fraccionamiento-service
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: 'https://github.com/PaulaMilla/prueba_gps-deploy.git'
+    targetRevision: HEAD
+    path: fraccionamiento-service
+
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: fraccionamiento
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
