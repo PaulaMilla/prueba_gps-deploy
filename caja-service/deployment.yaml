@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: caja-service
-          image: paulaveloso/caja-service:1be4c2a
+          image: paulaveloso/caja-service:c22ef42
           ports:
             - containerPort: 8080
           env:
