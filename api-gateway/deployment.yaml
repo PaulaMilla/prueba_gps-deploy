@@ -32,4 +32,12 @@ spec:
               value: "http://pacientes-service.pacientes:8080"
             - name: AUTH_SERVICE_URL
               value: "http://auth-service.auth:8080"
+            - name: CAJA_SERVICE_URL
+              value: "http://caja-service.caja:8080"
+            - name: COMPRAS_SERVICE_URL
+              value: "http://compras-service.compras:8080"
+            - name: DISPERSION_SERVICE_URL
+              value: "http://dispersion-service.dispersion:8080"
+            - name: FRACTIONAMIENTO_SERVICE_URL
+              value: "http://fraccionamiento-service.fraccionamiento:8080"
       
