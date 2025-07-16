@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: fraccionamiento-service
-          image: paulaveloso/fraccionamiento-service:1be4c2a
+          image: paulaveloso/fraccionamiento-service:575b228
           ports:
             - containerPort: 8080
           env:
