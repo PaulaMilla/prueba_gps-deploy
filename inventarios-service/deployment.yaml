@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: inventarios-service
-          image: paulaveloso/inventarios-service:9bcce5b
+          image: paulaveloso/inventarios-service:4168af0
           ports:
             - containerPort: 8080
           env:
