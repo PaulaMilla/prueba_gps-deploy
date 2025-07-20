@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: paulaveloso/frontend:30af751
+          image: paulaveloso/frontend:d94eea8
           ports:
             - containerPort: 80
