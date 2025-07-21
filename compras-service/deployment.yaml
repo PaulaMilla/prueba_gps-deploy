@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: compras-service
-          image: paulaveloso/compras-service:2c3157d
+          image: paulaveloso/compras-service:4a2bd7a
           ports:
             - containerPort: 8080
           env:
