@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: dispersion-service
-          image: paulaveloso/dispersion-service:575b228
+          image: paulaveloso/dispersion-service:220f676
           ports:
             - containerPort: 8080
           env:
